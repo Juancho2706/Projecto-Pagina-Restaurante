@@ -91,7 +91,31 @@ h1,h3{
     grid-template-rows: 90%;
     gap: 20px;
 }
-
+.maincontacto{
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+.uniondiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-inline: 50px;
+    justify-items: center;
+    align-content: space-around;
+    text-align: center;
+}
+.uniondiv>div>img{
+    height: 470px;
+}
+.uniondiv>div>p{
+    font-size: 1.5em;
+}
+.divtitulo{
+    text-align: center;
+}
+.signature{
+    height: 270px !important;
+}
 /* FANCY CSS */
 .button-30 {
   align-items: center;
