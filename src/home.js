@@ -1,25 +1,36 @@
-import {$div1,$div2,$header,$lacaja} from './esqueleto.js'
-import sushi1 from './assets/images/sushi1.jpg'
+import { $header,$maindiv } from "./esqueleto";
+import { menu } from "./menu";
+import imagebase from './assets/images/sushi1.jpg'
 
-function pagina1(){
-    const p1 = document.createElement('h1');
-    p1.innerText = 'Fresh Food with Great Taste';
-    $div1.append(p1);
-    const img1 = document.createElement('img');
-    img1.src = sushi1;
-    img1.classList.add('imagetitulo')
-    $div1.append(img1);
-    $div1.classList.add('div1');
-    $lacaja.appendChild($div1);
+function home(){
+    $maindiv.className = 'mainhome'
+    $maindiv.innerHTML = ''
+    //div 1
+    const div1 = document.createElement('div')
+        div1.classList.add('div1')
+    const h1 = document.createElement('h1')
+        h1.innerText = 'FabSushi'
+    const p = document.createElement('p')
+        p.innerHTML = 'Nuestros productos son 100%<br>veganos, vegetarianos y fabulosos,<br>toda nuestra carta aprobada por<br>Nicky Minaj en persona.'
+    const button = document.createElement('button')
+        button.innerText = 'Ver Menu'
+        button.classList.add('button-30')
+    button.addEventListener('click', (e)=>{
+        menu()
+    })
+    div1.append(h1)
+    div1.append(p)
+    div1.append(button)
+    $maindiv.append(div1)
 
-    const p2 = document.createElement('p');
-    p2.innerHTML = 'We try to keep as <font color="orange">Fresh & Healthy</font> as <br>possible by using <font color="orange">Local, seasonal Ingredients.</font> <br>At the same time, we avoid to use artificial <br>ingredients and food additives during <br>cooking process.'
-    $div2.classList.add('div2');
-    $div2.append(p2);
-    const p3 = document.createElement('p');
-    p3.innerHTML = 'We Create Delicious Sushi<br>Combination for You'
-    $div2.append(p3);
-    $lacaja.appendChild($div2);
+    //div 2
+    const div2 = document.createElement('div')
+        div2.classList.add('div2')
+    const imagenhome = new Image()
+    imagenhome.src = imagebase
+    imagenhome.classList.add('imagenhome')
+    div2.append(imagenhome)
+    $maindiv.append(div2)
 }
 
-export {pagina1};
+export {home}
